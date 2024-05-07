@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-effect bg-secondary-theme">
+                <div class="card-body text-center">
+                    <h3 class="text-theme-center">All Subscribers</h3>
+                    <p>You can manage your subscribers here</p>
+                    <button class="btn btn-warning ml-2" routerLink="/">Back to Dashboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-effect">
+                <div class="card-body">
+                    <table class="table row-border hover">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let sub of subArray; let i = index">
+                                <td style="max-width: 10px">{{i+1}}</td>
+                                <td style="max-width: 200px">{{sub.data.name}}</td>
+                                <td style="max-width: 100px">{{sub.data.email}}</td>
+                                <td>
+                                    <button 
+                                    class="btn btn-sm btn-danger ml-2"
+                                    (click)="onDelete(sub.id)"
+                                    >
+                                    Delete
+                                </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
